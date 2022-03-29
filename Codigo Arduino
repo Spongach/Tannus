@@ -1,0 +1,24 @@
+// Inicializando as variáveis de tempo
+unsigned long tempoled1 = millis();
+
+void setup() {
+  // Definição dos pinos de leds como saída
+  pinMode(2, OUTPUT);
+  pinMode(4, OUTPUT);
+}
+
+// Looping infinito
+void loop() {
+  led1();
+}
+
+void led1(){
+     if((millis() - tempoled1) < 500){ // Verifica se ja passou de 500 milisegundos
+  digitalWrite(2, HIGH);   // Acende o led da porta 2
+   }else{                  
+  digitalWrite(2, LOW);    // Apaga o led da porta 2
+    }
+   if ((millis() - tempoled1) > 700){
+    tempoled1 = millis();
+    }
+  }
